@@ -1,0 +1,9 @@
+FiloMiner - GPU miner for FiloPow (FPOW) / KawPow
+Copyright 2026 gacanga. Licensed under the Apache License, Version 2.0 (LICENSE).
+
+third_party/crypto/ethash (ethash / ProgPoW reference library, KawPow variant) comes
+from the FiloPow sources (github.com/filoproject/filopow, src/crypto/ethash), which
+take it from Ravencoin; ethash is Copyright 2018-2019 Pawel Bylica, Apache License 2.0.
+src/tls_conn.*, src/json.h come from NrbMiner (same author, Apache-2.0).
+The CUDA kernels (gpu/) are original code written from the ProgPoW 0.9.4 / KawPow
+specification and the ethash reference implementation.

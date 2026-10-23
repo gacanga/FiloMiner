@@ -1,0 +1,32 @@
+FiloMiner 0.1.0 - mineur GPU pour FiloPow (FPOW, KawPow), NVIDIA, Windows x64
+Aucun frais de developpeur : chaque share va a votre adresse.
+Source, documentation et nouvelles versions : https://github.com/gacanga/FiloMiner
+
+Prerequis
+  - GPU NVIDIA Pascal (GTX 10xx, P104-100, P106-100) ou plus recent, 4 Go ou plus.
+  - Pilote NVIDIA R5xx ou plus recent (CUDA 12). Pas besoin du toolkit CUDA : les DLL
+    du runtime CUDA et de NVRTC sont dans ce dossier.
+
+Demarrage
+  1. Ouvrir filominer.conf avec le Bloc-notes et remplacer YOUR_FPOW_ADDRESS sur la
+     ligne "user" par votre adresse FPOW (commence par F). ".rig1" est le nom du rig
+     affiche par le pool ; le changer si vous voulez.
+  2. Verification facultative : ouvrir une invite de commandes dans ce dossier et lancer
+         filominer.exe --test
+     La sortie doit finir par "TEST RESULT: ALL OK" (environ 1 minute par GPU).
+  3. Double-cliquer sur start_fpow.bat. Le mineur se relance tout seul 10 s apres tout
+     arret ; le journal est filominer.log. Fermer la fenetre pour arreter.
+
+Au demarrage, le DAG est construit sur chaque GPU (environ 13 s) et le kernel de
+recherche est compile pour la periode ProgPoW en cours (environ 1,5 s) ; puis les
+shares arrivent. Chaque share est recalcule sur le CPU avant d'etre envoye ("GPU ERRORS"
+dans la ligne de resume = frequences instables).
+
+Autres commandes
+  filominer.exe --bench 60         benchmark de hashrate de 60 s
+  filominer.exe --gpus 0,2 ...     seulement certains GPU (ordre de nvidia-smi)
+  filominer.exe --help             toutes les options (voir le README sur GitHub)
+
+Pool : pool.filopow.xyz, port 3333 (difficulte de depart 0,1) ou 4444 (difficulte 1).
+
+Licence : Apache-2.0 (LICENSE, NOTICE).

@@ -1,0 +1,19 @@
+LIBRARY fmgpu.dll
+EXPORTS
+    fm_gpu_device_count
+    fm_gpu_create
+    fm_gpu_destroy
+    fm_gpu_name
+    fm_gpu_last_error
+    fm_gpu_compute_capability
+    fm_gpu_sm_count
+    fm_gpu_memory
+    fm_gpu_batch
+    fm_gpu_set_grid
+    fm_gpu_build_dag
+    fm_gpu_read_dag
+    fm_gpu_set_period
+    fm_gpu_precompile
+    fm_gpu_kernel_info
+    fm_gpu_search
+    fm_gpu_debug_hashes
